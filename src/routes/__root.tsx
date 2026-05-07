@@ -9,6 +9,10 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { Header } from "@/components/site/Header";
+import { Footer } from "@/components/site/Footer";
+import { StickyWhatsApp } from "@/components/site/StickyWhatsApp";
+import { RevealRoot } from "@/components/site/Reveal";
 
 function NotFoundComponent() {
   return (
