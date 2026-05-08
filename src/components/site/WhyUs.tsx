@@ -14,7 +14,7 @@ export function WhyUs() {
     <section className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl reveal">
-          <div className="text-xs uppercase tracking-[0.3em] text-primary">Why Voyageluxe</div>
+          <div className="text-xs uppercase tracking-[0.3em] text-primary">Why Voyago India</div>
           <h2 className="mt-3 font-display text-4xl sm:text-5xl">Travel like the world is yours.</h2>
           <p className="mt-4 text-muted-foreground">
             We design private, premium journeys that feel handcrafted — because they are.

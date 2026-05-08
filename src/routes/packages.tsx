@@ -7,9 +7,9 @@ import { packages, type Pkg } from "@/lib/data";
 export const Route = createFileRoute("/packages")({
   head: () => ({
     meta: [
-      { title: "Tour Packages — Voyageluxe" },
+      { title: "Tour Packages — Voyago India" },
       { name: "description", content: "Honeymoon, family, adventure, group, international, and weekend tour packages." },
-      { property: "og:title", content: "Tour Packages — Voyageluxe" },
+      { property: "og:title", content: "Tour Packages — Voyago India" },
       { property: "og:description", content: "Curated holiday packages with WhatsApp instant booking." },
     ],
   }),

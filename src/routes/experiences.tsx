@@ -7,9 +7,9 @@ import { experiences } from "@/lib/data";
 export const Route = createFileRoute("/experiences")({
   head: () => ({
     meta: [
-      { title: "Experiences — Voyageluxe" },
+      { title: "Experiences — Voyago India" },
       { name: "description", content: "Luxury stays, beach escapes, mountain treks, spiritual & romantic travel." },
-      { property: "og:title", content: "Travel Experiences — Voyageluxe" },
+      { property: "og:title", content: "Travel Experiences — Voyago India" },
       { property: "og:description", content: "Cinematic experiences for modern Indian travelers." },
     ],
   }),
@@ -57,7 +57,7 @@ function ExperiencesPage() {
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="reveal">
-            <div className="text-xs uppercase tracking-[0.3em] text-primary">@voyageluxe</div>
+            <div className="text-xs uppercase tracking-[0.3em] text-primary">@voyagoindia</div>
             <h2 className="mt-3 font-display text-4xl sm:text-5xl">Travel reels from our community</h2>
           </div>
           <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3">

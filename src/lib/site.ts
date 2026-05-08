@@ -1,8 +1,8 @@
 export const SITE = {
-  name: "Voyageluxe",
-  tagline: "Curated journeys for modern Indian travelers",
+  name: "Voyago India",
+  tagline: "Premium tours, transfers & bespoke holidays",
   whatsapp: "919121878363", // +91 9121878363
-  email: "concierge@voyageluxe.in",
+  email: "concierge@voyagoindia.com",
   phone: "+91 91218 78363",
   instagram: "https://instagram.com",
 };

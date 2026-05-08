@@ -7,9 +7,9 @@ import { SITE, waLink } from "@/lib/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Voyageluxe" },
+      { title: "Contact — Voyago India" },
       { name: "description", content: "Get in touch for a custom trip quote on WhatsApp, phone, or email." },
-      { property: "og:title", content: "Contact Voyageluxe" },
+      { property: "og:title", content: "Contact Voyago India" },
       { property: "og:description", content: "Plan your dream trip with our concierge — instant WhatsApp quotes." },
     ],
   }),
