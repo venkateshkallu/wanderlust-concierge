@@ -7,9 +7,9 @@ import { destinations } from "@/lib/data";
 export const Route = createFileRoute("/destinations")({
   head: () => ({
     meta: [
-      { title: "Destinations — Voyageluxe" },
+      { title: "Destinations — Voyago India" },
       { name: "description", content: "Explore curated domestic and international destinations for Indian travelers." },
-      { property: "og:title", content: "Destinations — Voyageluxe" },
+      { property: "og:title", content: "Destinations — Voyago India" },
       { property: "og:description", content: "Kashmir, Maldives, Bali, Switzerland — your next dream trip awaits." },
     ],
   }),

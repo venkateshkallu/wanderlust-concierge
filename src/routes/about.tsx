@@ -6,9 +6,9 @@ import { CTASection } from "@/components/site/CTASection";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Voyageluxe" },
+      { title: "About — Voyago India" },
       { name: "description", content: "We craft cinematic, bespoke journeys for modern Indian travelers." },
-      { property: "og:title", content: "About Voyageluxe" },
+      { property: "og:title", content: "About Voyago India" },
       { property: "og:description", content: "India's modern luxury travel concierge." },
     ],
   }),
@@ -26,7 +26,7 @@ function AboutPage() {
             We design <span className="text-gradient-sunset italic">moments</span>, not just trips.
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Voyageluxe was founded by a team of obsessive travelers who believe a great journey
+            Voyago India was founded by a team of obsessive travelers who believe a great journey
             should feel like a film — visually rich, emotionally moving, and effortlessly produced.
             Every itinerary we craft is a script written for you.
           </p>
