@@ -38,7 +38,7 @@ export function DestinationCard({ d, index = 0 }: { d: Destination; index?: numb
 
           <div className="mt-4 grid grid-cols-2 gap-2">
             <Link
-              to="/packages"
+              to="/tours"
               className="inline-flex items-center justify-center rounded-full bg-white text-foreground px-3 py-2 text-xs font-medium hover:bg-white/90 transition"
             >
               Book Now

@@ -30,22 +30,22 @@ export function Footer() {
         <div>
           <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">India Tours</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/india-tours/north" className="hover:text-primary text-muted-foreground">North India</Link></li>
-            <li><Link to="/india-tours/south" className="hover:text-primary text-muted-foreground">South India</Link></li>
-            <li><Link to="/india-tours/east" className="hover:text-primary text-muted-foreground">East India</Link></li>
-            <li><Link to="/india-tours/west" className="hover:text-primary text-muted-foreground">West India</Link></li>
+            <li><a href="/tours#north" className="hover:text-primary text-muted-foreground">North India</a></li>
+            <li><a href="/tours#south" className="hover:text-primary text-muted-foreground">South India</a></li>
+            <li><a href="/tours#east" className="hover:text-primary text-muted-foreground">East India</a></li>
+            <li><a href="/tours#west" className="hover:text-primary text-muted-foreground">West India</a></li>
           </ul>
         </div>
 
         <div>
           <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Explore</h4>
           <ul className="space-y-2 text-sm">
+            <li><Link to="/tours" className="hover:text-primary text-muted-foreground">All Tours</Link></li>
             <li><Link to="/international-tours" className="hover:text-primary text-muted-foreground">International</Link></li>
-            <li><Link to="/honeymoon" className="hover:text-primary text-muted-foreground">Honeymoon</Link></li>
-            <li><Link to="/group-tours" className="hover:text-primary text-muted-foreground">Group Tours</Link></li>
             <li><Link to="/car-rentals" className="hover:text-primary text-muted-foreground">Car Rentals</Link></li>
             <li><Link to="/bus-rentals" className="hover:text-primary text-muted-foreground">Bus Rentals</Link></li>
             <li><Link to="/blogs" className="hover:text-primary text-muted-foreground">Blogs</Link></li>
+            <li><Link to="/contact" className="hover:text-primary text-muted-foreground">Contact</Link></li>
           </ul>
         </div>
 

@@ -79,7 +79,7 @@ export function Hero() {
 
           <div className="mt-7 flex flex-col sm:flex-row flex-wrap gap-3">
             <Link
-              to="/packages"
+              to="/tours"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-sunset px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-glow hover:scale-[1.03] transition-transform"
             >
               Plan Your Trip
