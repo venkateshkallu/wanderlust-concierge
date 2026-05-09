@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ToursRouteImport } from './routes/tours'
 import { Route as PackagesRouteImport } from './routes/packages'
 import { Route as InternationalToursRouteImport } from './routes/international-tours'
 import { Route as IndiaToursRouteImport } from './routes/india-tours'
@@ -24,6 +25,11 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as IndiaToursRegionRouteImport } from './routes/india-tours.$region'
 
+const ToursRoute = ToursRouteImport.update({
+  id: '/tours',
+  path: '/tours',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PackagesRoute = PackagesRouteImport.update({
   id: '/packages',
   path: '/packages',
@@ -109,6 +115,7 @@ export interface FileRoutesByFullPath {
   '/india-tours': typeof IndiaToursRouteWithChildren
   '/international-tours': typeof InternationalToursRoute
   '/packages': typeof PackagesRoute
+  '/tours': typeof ToursRoute
   '/india-tours/$region': typeof IndiaToursRegionRoute
 }
 export interface FileRoutesByTo {
@@ -125,6 +132,7 @@ export interface FileRoutesByTo {
   '/india-tours': typeof IndiaToursRouteWithChildren
   '/international-tours': typeof InternationalToursRoute
   '/packages': typeof PackagesRoute
+  '/tours': typeof ToursRoute
   '/india-tours/$region': typeof IndiaToursRegionRoute
 }
 export interface FileRoutesById {
@@ -142,6 +150,7 @@ export interface FileRoutesById {
   '/india-tours': typeof IndiaToursRouteWithChildren
   '/international-tours': typeof InternationalToursRoute
   '/packages': typeof PackagesRoute
+  '/tours': typeof ToursRoute
   '/india-tours/$region': typeof IndiaToursRegionRoute
 }
 export interface FileRouteTypes {
@@ -160,6 +169,7 @@ export interface FileRouteTypes {
     | '/india-tours'
     | '/international-tours'
     | '/packages'
+    | '/tours'
     | '/india-tours/$region'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -176,6 +186,7 @@ export interface FileRouteTypes {
     | '/india-tours'
     | '/international-tours'
     | '/packages'
+    | '/tours'
     | '/india-tours/$region'
   id:
     | '__root__'
@@ -192,6 +203,7 @@ export interface FileRouteTypes {
     | '/india-tours'
     | '/international-tours'
     | '/packages'
+    | '/tours'
     | '/india-tours/$region'
   fileRoutesById: FileRoutesById
 }
@@ -209,10 +221,18 @@ export interface RootRouteChildren {
   IndiaToursRoute: typeof IndiaToursRouteWithChildren
   InternationalToursRoute: typeof InternationalToursRoute
   PackagesRoute: typeof PackagesRoute
+  ToursRoute: typeof ToursRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/tours': {
+      id: '/tours'
+      path: '/tours'
+      fullPath: '/tours'
+      preLoaderRoute: typeof ToursRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/packages': {
       id: '/packages'
       path: '/packages'
@@ -340,7 +360,18 @@ const rootRouteChildren: RootRouteChildren = {
   IndiaToursRoute: IndiaToursRouteWithChildren,
   InternationalToursRoute: InternationalToursRoute,
   PackagesRoute: PackagesRoute,
+  ToursRoute: ToursRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
