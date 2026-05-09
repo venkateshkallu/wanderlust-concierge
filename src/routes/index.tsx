@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Car, Bus, Heart, Users } from "lucide-react";
+import { ArrowUpRight, Car, Bus, Globe, Users, MapPin, BookOpen } from "lucide-react";
 import { Hero } from "@/components/site/Hero";
 import { MarqueeStrip } from "@/components/site/MarqueeStrip";
 import { DestinationCard } from "@/components/site/DestinationCard";
@@ -15,12 +15,12 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { to: "/india-tours", icon: Users, title: "India Tours", desc: "North · South · East · West" },
-  { to: "/international-tours", icon: ArrowUpRight, title: "International", desc: "Dubai · Bali · Maldives · more" },
-  { to: "/honeymoon", icon: Heart, title: "Honeymoon", desc: "Romantic getaways for two" },
+  { to: "/tours", icon: MapPin, title: "India Tours", desc: "North · South · East · West" },
+  { to: "/international-tours", icon: Globe, title: "International", desc: "Dubai · Bali · Maldives & more" },
   { to: "/car-rentals", icon: Car, title: "Car Rentals", desc: "Sedan · SUV · Luxury · Tempo" },
   { to: "/bus-rentals", icon: Bus, title: "Bus Rentals", desc: "Group & corporate transport" },
-  { to: "/group-tours", icon: Users, title: "Group Tours", desc: "Friends, family, colleagues" },
+  { to: "/blogs", icon: BookOpen, title: "Travel Blogs", desc: "Guides & itineraries" },
+  { to: "/contact", icon: Users, title: "Plan With Us", desc: "Bespoke trip concierge" },
 ] as const;
 
 function Index() {
@@ -58,7 +58,7 @@ function Index() {
               <div className="text-xs uppercase tracking-[0.3em] text-primary">India, Region by Region</div>
               <h2 className="mt-3 font-display text-3xl sm:text-4xl">Discover your India</h2>
             </div>
-            <Link to="/india-tours" className="text-sm text-muted-foreground hover:text-primary inline-flex items-center gap-1">
+            <Link to="/tours" className="text-sm text-muted-foreground hover:text-primary inline-flex items-center gap-1">
               All India tours <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
@@ -66,14 +66,14 @@ function Index() {
             {Object.values(REGIONS).map((r, i) => {
               const sample = destinations.find((d) => d.zone === r.zone);
               return (
-                <Link key={r.slug} to="/india-tours/$region" params={{ region: r.slug }} className="reveal group relative h-56 sm:h-72 overflow-hidden rounded-3xl" style={{ transitionDelay: `${i * 70}ms` }}>
+                <a key={r.slug} href={`/tours#${r.slug}`} className="reveal group relative h-56 sm:h-72 overflow-hidden rounded-3xl block" style={{ transitionDelay: `${i * 70}ms` }}>
                   <img src={sample?.image} alt={r.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
                     <h3 className="font-display text-xl sm:text-2xl text-white">{r.title}</h3>
                     <p className="mt-1 text-xs sm:text-sm text-white/75 line-clamp-2">{r.desc}</p>
                   </div>
-                </Link>
+                </a>
               );
             })}
           </div>
@@ -88,7 +88,7 @@ function Index() {
               <div className="text-xs uppercase tracking-[0.3em] text-primary">Trending Destinations</div>
               <h2 className="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl">Where Indian travelers go to fall in love</h2>
             </div>
-            <Link to="/destinations" className="text-sm text-muted-foreground hover:text-primary inline-flex items-center gap-1">
+            <Link to="/tours" className="text-sm text-muted-foreground hover:text-primary inline-flex items-center gap-1">
               View all <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
@@ -111,7 +111,7 @@ function Index() {
               <div className="text-xs uppercase tracking-[0.3em] text-primary">Curated Packages</div>
               <h2 className="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl">Hand-picked itineraries, ready to book</h2>
             </div>
-            <Link to="/packages" className="text-sm text-muted-foreground hover:text-primary inline-flex items-center gap-1">
+            <Link to="/tours" className="text-sm text-muted-foreground hover:text-primary inline-flex items-center gap-1">
               View all <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>

@@ -9,54 +9,23 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as PackagesRouteImport } from './routes/packages'
+import { Route as ToursRouteImport } from './routes/tours'
 import { Route as InternationalToursRouteImport } from './routes/international-tours'
-import { Route as IndiaToursRouteImport } from './routes/india-tours'
-import { Route as HoneymoonRouteImport } from './routes/honeymoon'
-import { Route as GroupToursRouteImport } from './routes/group-tours'
-import { Route as ExperiencesRouteImport } from './routes/experiences'
-import { Route as DestinationsRouteImport } from './routes/destinations'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CarRentalsRouteImport } from './routes/car-rentals'
 import { Route as BusRentalsRouteImport } from './routes/bus-rentals'
 import { Route as BlogsRouteImport } from './routes/blogs'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as IndiaToursRegionRouteImport } from './routes/india-tours.$region'
 
-const PackagesRoute = PackagesRouteImport.update({
-  id: '/packages',
-  path: '/packages',
+const ToursRoute = ToursRouteImport.update({
+  id: '/tours',
+  path: '/tours',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InternationalToursRoute = InternationalToursRouteImport.update({
   id: '/international-tours',
   path: '/international-tours',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IndiaToursRoute = IndiaToursRouteImport.update({
-  id: '/india-tours',
-  path: '/india-tours',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HoneymoonRoute = HoneymoonRouteImport.update({
-  id: '/honeymoon',
-  path: '/honeymoon',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GroupToursRoute = GroupToursRouteImport.update({
-  id: '/group-tours',
-  path: '/group-tours',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ExperiencesRoute = ExperiencesRouteImport.update({
-  id: '/experiences',
-  path: '/experiences',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DestinationsRoute = DestinationsRouteImport.update({
-  id: '/destinations',
-  path: '/destinations',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -89,11 +58,6 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndiaToursRegionRoute = IndiaToursRegionRouteImport.update({
-  id: '/$region',
-  path: '/$region',
-  getParentRoute: () => IndiaToursRoute,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -102,14 +66,8 @@ export interface FileRoutesByFullPath {
   '/bus-rentals': typeof BusRentalsRoute
   '/car-rentals': typeof CarRentalsRoute
   '/contact': typeof ContactRoute
-  '/destinations': typeof DestinationsRoute
-  '/experiences': typeof ExperiencesRoute
-  '/group-tours': typeof GroupToursRoute
-  '/honeymoon': typeof HoneymoonRoute
-  '/india-tours': typeof IndiaToursRouteWithChildren
   '/international-tours': typeof InternationalToursRoute
-  '/packages': typeof PackagesRoute
-  '/india-tours/$region': typeof IndiaToursRegionRoute
+  '/tours': typeof ToursRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -118,14 +76,8 @@ export interface FileRoutesByTo {
   '/bus-rentals': typeof BusRentalsRoute
   '/car-rentals': typeof CarRentalsRoute
   '/contact': typeof ContactRoute
-  '/destinations': typeof DestinationsRoute
-  '/experiences': typeof ExperiencesRoute
-  '/group-tours': typeof GroupToursRoute
-  '/honeymoon': typeof HoneymoonRoute
-  '/india-tours': typeof IndiaToursRouteWithChildren
   '/international-tours': typeof InternationalToursRoute
-  '/packages': typeof PackagesRoute
-  '/india-tours/$region': typeof IndiaToursRegionRoute
+  '/tours': typeof ToursRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -135,14 +87,8 @@ export interface FileRoutesById {
   '/bus-rentals': typeof BusRentalsRoute
   '/car-rentals': typeof CarRentalsRoute
   '/contact': typeof ContactRoute
-  '/destinations': typeof DestinationsRoute
-  '/experiences': typeof ExperiencesRoute
-  '/group-tours': typeof GroupToursRoute
-  '/honeymoon': typeof HoneymoonRoute
-  '/india-tours': typeof IndiaToursRouteWithChildren
   '/international-tours': typeof InternationalToursRoute
-  '/packages': typeof PackagesRoute
-  '/india-tours/$region': typeof IndiaToursRegionRoute
+  '/tours': typeof ToursRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -153,14 +99,8 @@ export interface FileRouteTypes {
     | '/bus-rentals'
     | '/car-rentals'
     | '/contact'
-    | '/destinations'
-    | '/experiences'
-    | '/group-tours'
-    | '/honeymoon'
-    | '/india-tours'
     | '/international-tours'
-    | '/packages'
-    | '/india-tours/$region'
+    | '/tours'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -169,14 +109,8 @@ export interface FileRouteTypes {
     | '/bus-rentals'
     | '/car-rentals'
     | '/contact'
-    | '/destinations'
-    | '/experiences'
-    | '/group-tours'
-    | '/honeymoon'
-    | '/india-tours'
     | '/international-tours'
-    | '/packages'
-    | '/india-tours/$region'
+    | '/tours'
   id:
     | '__root__'
     | '/'
@@ -185,14 +119,8 @@ export interface FileRouteTypes {
     | '/bus-rentals'
     | '/car-rentals'
     | '/contact'
-    | '/destinations'
-    | '/experiences'
-    | '/group-tours'
-    | '/honeymoon'
-    | '/india-tours'
     | '/international-tours'
-    | '/packages'
-    | '/india-tours/$region'
+    | '/tours'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -202,22 +130,17 @@ export interface RootRouteChildren {
   BusRentalsRoute: typeof BusRentalsRoute
   CarRentalsRoute: typeof CarRentalsRoute
   ContactRoute: typeof ContactRoute
-  DestinationsRoute: typeof DestinationsRoute
-  ExperiencesRoute: typeof ExperiencesRoute
-  GroupToursRoute: typeof GroupToursRoute
-  HoneymoonRoute: typeof HoneymoonRoute
-  IndiaToursRoute: typeof IndiaToursRouteWithChildren
   InternationalToursRoute: typeof InternationalToursRoute
-  PackagesRoute: typeof PackagesRoute
+  ToursRoute: typeof ToursRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/packages': {
-      id: '/packages'
-      path: '/packages'
-      fullPath: '/packages'
-      preLoaderRoute: typeof PackagesRouteImport
+    '/tours': {
+      id: '/tours'
+      path: '/tours'
+      fullPath: '/tours'
+      preLoaderRoute: typeof ToursRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/international-tours': {
@@ -225,41 +148,6 @@ declare module '@tanstack/react-router' {
       path: '/international-tours'
       fullPath: '/international-tours'
       preLoaderRoute: typeof InternationalToursRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/india-tours': {
-      id: '/india-tours'
-      path: '/india-tours'
-      fullPath: '/india-tours'
-      preLoaderRoute: typeof IndiaToursRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/honeymoon': {
-      id: '/honeymoon'
-      path: '/honeymoon'
-      fullPath: '/honeymoon'
-      preLoaderRoute: typeof HoneymoonRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/group-tours': {
-      id: '/group-tours'
-      path: '/group-tours'
-      fullPath: '/group-tours'
-      preLoaderRoute: typeof GroupToursRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/experiences': {
-      id: '/experiences'
-      path: '/experiences'
-      fullPath: '/experiences'
-      preLoaderRoute: typeof ExperiencesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/destinations': {
-      id: '/destinations'
-      path: '/destinations'
-      fullPath: '/destinations'
-      preLoaderRoute: typeof DestinationsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -304,27 +192,8 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/india-tours/$region': {
-      id: '/india-tours/$region'
-      path: '/$region'
-      fullPath: '/india-tours/$region'
-      preLoaderRoute: typeof IndiaToursRegionRouteImport
-      parentRoute: typeof IndiaToursRoute
-    }
   }
 }
-
-interface IndiaToursRouteChildren {
-  IndiaToursRegionRoute: typeof IndiaToursRegionRoute
-}
-
-const IndiaToursRouteChildren: IndiaToursRouteChildren = {
-  IndiaToursRegionRoute: IndiaToursRegionRoute,
-}
-
-const IndiaToursRouteWithChildren = IndiaToursRoute._addFileChildren(
-  IndiaToursRouteChildren,
-)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -333,13 +202,8 @@ const rootRouteChildren: RootRouteChildren = {
   BusRentalsRoute: BusRentalsRoute,
   CarRentalsRoute: CarRentalsRoute,
   ContactRoute: ContactRoute,
-  DestinationsRoute: DestinationsRoute,
-  ExperiencesRoute: ExperiencesRoute,
-  GroupToursRoute: GroupToursRoute,
-  HoneymoonRoute: HoneymoonRoute,
-  IndiaToursRoute: IndiaToursRouteWithChildren,
   InternationalToursRoute: InternationalToursRoute,
-  PackagesRoute: PackagesRoute,
+  ToursRoute: ToursRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

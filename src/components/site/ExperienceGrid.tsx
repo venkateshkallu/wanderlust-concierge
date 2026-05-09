@@ -11,7 +11,7 @@ export function ExperienceGrid() {
             <div className="text-xs uppercase tracking-[0.3em] text-primary">Experiences</div>
             <h2 className="mt-3 font-display text-4xl sm:text-5xl">Curated for every kind of wanderer</h2>
           </div>
-          <Link to="/experiences" className="hidden sm:inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary">
+          <Link to="/tours" className="hidden sm:inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary">
             View all <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>
