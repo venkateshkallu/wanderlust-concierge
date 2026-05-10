@@ -3,5 +3,13 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": null,
-  "outputDirectory": "dist"
+  "outputDirectory": "dist/client",
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs24.x"
+    }
+  },
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/index" }
+  ]
 }
