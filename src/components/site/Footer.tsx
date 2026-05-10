@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Compass, Instagram, Mail, Phone, MessageCircle } from "lucide-react";
+import { Instagram, Mail, Phone, MessageCircle } from "lucide-react";
 import { SITE, waLink } from "@/lib/site";
+import logo from "@/assets/logo.png";
 
 export function Footer() {
   return (
