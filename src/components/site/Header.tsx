@@ -40,8 +40,8 @@ export function Header() {
           }`}
         >
           <Link to="/" className="flex items-center gap-2 shrink-0" onClick={() => setOpen(false)}>
-            <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-sunset shadow-glow">
-              <Compass className="h-5 w-5 text-primary-foreground" strokeWidth={2.5} />
+            <span className="relative inline-flex h-10 w-10 items-center justify-center rounded-full overflow-hidden bg-white/5 ring-1 ring-white/10 shadow-glow">
+              <img src={logo} alt={SITE.name} className="h-full w-full object-cover" />
             </span>
             <span className="font-display text-lg sm:text-xl tracking-tight whitespace-nowrap">{SITE.name}</span>
           </Link>
