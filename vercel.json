@@ -6,7 +6,7 @@
   "outputDirectory": "dist/client",
   "functions": {
     "api/index.js": {
-      "runtime": "nodejs24.x",
+      "runtime": "nodejs20.x",
       "includeFiles": "dist/server/**"
     }
   },
