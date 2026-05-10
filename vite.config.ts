@@ -12,4 +12,55 @@ export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
+  vite: {
+    server: {
+      host: process.env.HOST || '0.0.0.0',
+      port: parseInt(process.env.PORT || '3000'),
+      strictPort: false,
+      hmr: {
+        clientPort: 3000,
+        host: 'localhost',
+      },
+      watch: {
+        usePolling: process.env.DOCKER === 'true',
+        interval: 1000,
+      },
+    },
+    optimizeDeps: {
+      include: [
+        'react',
+        'react-dom',
+        '@tanstack/react-router',
+        '@tanstack/react-query',
+      ],
+      esbuildOptions: {
+        define: {
+          global: 'globalThis',
+        },
+      },
+    },
+    build: {
+      sourcemap: false,
+      minify: 'esbuild',
+      cssMinify: true,
+      rollupOptions: {
+        output: {
+          manualChunks: (id) => {
+            if (id.includes('node_modules')) {
+              if (id.includes('react') || id.includes('react-dom')) {
+                return 'vendor-react';
+              }
+              if (id.includes('@tanstack/react-router')) {
+                return 'vendor-router';
+              }
+              if (id.includes('@radix-ui')) {
+                return 'vendor-ui';
+              }
+              return 'vendor';
+            }
+          },
+        },
+      },
+    },
+  },
 });
