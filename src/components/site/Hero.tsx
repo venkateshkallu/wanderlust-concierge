@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link } from 'react-router-dom';
 import { ArrowRight, MessageCircle, MapPin, Calendar, Users, Sparkles } from "lucide-react";
 import heroImg from "@/assets/hero-maldives.jpg";
 import { waLink } from "@/lib/site";

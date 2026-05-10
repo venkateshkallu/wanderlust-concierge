@@ -1,42 +1,48 @@
-import { Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
-import { SITE, waLink } from "@/lib/site";
-import logo from "@/assets/logo.png";
+import { Link, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Menu, X } from 'lucide-react';
+import { SITE, waLink } from '@/lib/site';
+import logo from '@/assets/logo.png';
 
 const nav = [
-  { to: "/", label: "Home" },
-  { to: "/tours", label: "Tours" },
-  { to: "/international-tours", label: "International Tours" },
-  { to: "/car-rentals", label: "Car Rentals" },
-  { to: "/bus-rentals", label: "Bus Rentals" },
-  { to: "/blogs", label: "Blogs" },
-  { to: "/about", label: "About Us" },
-  { to: "/contact", label: "Contact Us" },
+  { to: '/', label: 'Home' },
+  { to: '/tours', label: 'Tours' },
+  { to: '/international-tours', label: 'International Tours' },
+  { to: '/car-rentals', label: 'Car Rentals' },
+  { to: '/bus-rentals', label: 'Bus Rentals' },
+  { to: '/blogs', label: 'Blogs' },
+  { to: '/about', label: 'About Us' },
+  { to: '/contact', label: 'Contact Us' },
 ] as const;
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
   }, [open]);
 
+  const isActive = (path: string) => {
+    if (path === '/') return location.pathname === '/';
+    return location.pathname.startsWith(path);
+  };
+
   return (
-    <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? "py-2" : "py-3 sm:py-4"}`}>
+    <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? 'py-2' : 'py-3 sm:py-4'}`}>
       <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
         <div
           className={`flex items-center justify-between rounded-2xl px-3 sm:px-5 py-2.5 sm:py-3 transition-all duration-500 ${
-            scrolled || open ? "glass-strong shadow-card" : "bg-transparent"
+            scrolled || open ? 'glass-strong shadow-card' : 'bg-transparent'
           }`}
         >
           <Link to="/" className="flex items-center gap-2 shrink-0" onClick={() => setOpen(false)}>
@@ -51,10 +57,9 @@ export function Header() {
               <Link
                 key={n.to}
                 to={n.to}
-                activeOptions={{ exact: n.to === "/" }}
-                activeProps={{ className: "text-foreground bg-white/10" }}
-                inactiveProps={{ className: "text-muted-foreground hover:text-foreground" }}
-                className="px-3 py-2 text-sm rounded-full transition-colors"
+                className={`px-3 py-2 text-sm rounded-full transition-colors ${
+                  isActive(n.to) ? 'text-foreground bg-white/10' : 'text-muted-foreground hover:text-foreground'
+                }`}
               >
                 {n.label}
               </Link>
