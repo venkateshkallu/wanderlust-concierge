@@ -12,3 +12,10 @@ node_modules
 dist
 .vinxi
 .lovable
+.output
+.tanstack
+deployment
+docs
+scripts
+*.md
+!README.md
