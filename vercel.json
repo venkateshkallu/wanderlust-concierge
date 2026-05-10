@@ -5,8 +5,9 @@
   "framework": null,
   "outputDirectory": "dist/client",
   "functions": {
-    "api/**/*.js": {
-      "runtime": "nodejs24.x"
+    "api/index.js": {
+      "runtime": "nodejs24.x",
+      "includeFiles": "dist/server/**"
     }
   },
   "rewrites": [

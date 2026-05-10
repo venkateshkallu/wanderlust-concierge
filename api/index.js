@@ -1,8 +1,9 @@
 // Vercel serverless function for TanStack Start
-import handler from '../dist/server/index.js';
-
 export default async function (req, res) {
   try {
+    // Dynamically import the server handler
+    const { default: handler } = await import('../dist/server/index.js');
+    
     // Build full URL
     const protocol = req.headers['x-forwarded-proto'] || 'https';
     const host = req.headers['x-forwarded-host'] || req.headers.host;
@@ -12,8 +13,6 @@ export default async function (req, res) {
     const request = new Request(url, {
       method: req.method,
       headers: new Headers(req.headers),
-      body: req.method !== 'GET' && req.method !== 'HEAD' ? 
-        req : undefined,
     });
 
     // Get response from TanStack Start server
@@ -34,6 +33,7 @@ export default async function (req, res) {
     
   } catch (error) {
     console.error('Serverless function error:', error);
+    console.error('Error stack:', error.stack);
     res.status(500).send(`
       <!DOCTYPE html>
       <html>
@@ -41,6 +41,7 @@ export default async function (req, res) {
         <body>
           <h1>Internal Server Error</h1>
           <p>Something went wrong. Please try again later.</p>
+          <pre style="background: #f5f5f5; padding: 10px; margin-top: 20px;">${error.message}</pre>
         </body>
       </html>
     `);
