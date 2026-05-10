@@ -1,8 +1,9 @@
 export const SITE = {
-  name: "Voyago India",
+  name: "Anuka Tour & Travels",
+  shortName: "Anuka",
   tagline: "Premium tours, transfers & bespoke holidays",
-  whatsapp: "919121878363", // +91 9121878363
-  email: "concierge@voyagoindia.com",
+  whatsapp: "919121878363",
+  email: "concierge@anukatravels.com",
   phone: "+91 91218 78363",
   instagram: "https://instagram.com",
 };

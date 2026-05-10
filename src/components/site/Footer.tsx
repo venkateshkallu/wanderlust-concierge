@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Compass, Instagram, Mail, Phone, MessageCircle } from "lucide-react";
+import { Instagram, Mail, Phone, MessageCircle } from "lucide-react";
 import { SITE, waLink } from "@/lib/site";
+import logo from "@/assets/logo.png";
 
 export function Footer() {
   return (
@@ -9,8 +10,8 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 grid gap-10 md:grid-cols-5">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-sunset shadow-glow">
-              <Compass className="h-5 w-5 text-primary-foreground" strokeWidth={2.5} />
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full overflow-hidden bg-white/5 ring-1 ring-white/10 shadow-glow">
+              <img src={logo} alt={SITE.name} className="h-full w-full object-cover" />
             </span>
             <span className="font-display text-2xl">{SITE.name}</span>
           </div>
