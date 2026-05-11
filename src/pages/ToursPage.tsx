@@ -1,7 +1,7 @@
-import { MessageCircle, MapPin, Calendar, Star, Mountain, Palmtree, Cloud, Crown } from 'lucide-react';
+import { MessageCircle, MapPin, Calendar, Star, Mountain, Palmtree, Cloud, Crown, Hotel, Clock, Phone } from 'lucide-react';
 import { CTASection } from '@/components/site/CTASection';
-import { destinations, packages, REGIONS } from '@/lib/data';
-import { waLink } from '@/lib/site';
+import { destinations, packages, REGIONS, indiaStates } from '@/lib/data';
+import { SITE, waLink } from '@/lib/site';
 
 const REGION_META = [
   { key: 'North' as const, slug: 'north', icon: Mountain, accent: 'Snow-clad Himalayas, valleys & mughal gardens.' },
