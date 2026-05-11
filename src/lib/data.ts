@@ -151,3 +151,94 @@ export const blogs: Blog[] = [
   { slug: "dubai-luxury-trip", title: "Dubai in 5 Days: A Luxury Itinerary", category: "Luxury", date: "Mar 15, 2026", readMins: 9, image: dubai, excerpt: "Burj Khalifa dinners, desert safaris, and the best brunches in the city." },
   { slug: "sikkim-adventure", title: "Sikkim Adventure: Offbeat Routes & Treks", category: "Adventure", date: "Feb 28, 2026", readMins: 8, image: ladakh, excerpt: "From Goecha La to Yumthang — a guide to Sikkim's most cinematic trails." },
 ];
+
+// State-wise India tour packages (detailed cities)
+export type CityPackage = {
+  city: string;
+  tagline: string;
+  duration: string;
+  from: number;
+  highlights: string[];
+  hotels: string;
+  image: string;
+};
+
+export type IndiaStateTours = {
+  slug: string;
+  state: string;
+  tagline: string;
+  bestTime: string;
+  banner: string;
+  cities: CityPackage[];
+};
+
+export const indiaStates: IndiaStateTours[] = [
+  {
+    slug: "himachal-pradesh",
+    state: "Himachal Pradesh",
+    tagline: "Snow valleys, pine forests & Himalayan towns",
+    bestTime: "Oct – Mar (Snow) · Apr – Jun (Pleasant)",
+    banner: manali,
+    cities: [
+      { city: "Shimla", tagline: "Queen of the Hills", duration: "3 Nights / 4 Days", from: 12999, highlights: ["Mall Road", "Kufri snow point", "Jakhu Temple", "Toy Train"], hotels: "3★/4★ hotels · daily breakfast & dinner · sightseeing by cab", image: manali },
+      { city: "Kullu", tagline: "Valley of Gods", duration: "3 Nights / 4 Days", from: 11999, highlights: ["River rafting", "Great Himalayan NP", "Bijli Mahadev", "Shawl factories"], hotels: "Riverside resorts · breakfast + dinner · private transport", image: manali },
+      { city: "Manali", tagline: "Snowfall & pine valleys", duration: "4 Nights / 5 Days", from: 16999, highlights: ["Solang Valley", "Rohtang Pass", "Hadimba Temple", "Old Manali cafés"], hotels: "Premium hotels · MAP plan · Volvo / cab transfers", image: manali },
+      { city: "Kasol", tagline: "Mini Israel of India", duration: "2 Nights / 3 Days", from: 9999, highlights: ["Parvati river", "Tosh village", "Kheerganga trek", "Cafés & treks"], hotels: "Boutique riverside stays · breakfast · local sightseeing", image: manali },
+      { city: "Dharamshala", tagline: "Home of the Dalai Lama", duration: "3 Nights / 4 Days", from: 13999, highlights: ["McLeodganj", "Bhagsu Falls", "Triund trek", "Dal Lake"], hotels: "3★/4★ stays · breakfast + dinner · cab sightseeing", image: manali },
+    ],
+  },
+  {
+    slug: "rajasthan",
+    state: "Rajasthan",
+    tagline: "Royal palaces, golden dunes & living forts",
+    bestTime: "Oct – Mar",
+    banner: rajasthan,
+    cities: [
+      { city: "Jaipur", tagline: "The Pink City", duration: "2 Nights / 3 Days", from: 9999, highlights: ["Amber Fort", "Hawa Mahal", "City Palace", "Jal Mahal"], hotels: "Heritage / 4★ hotels · breakfast · AC cab", image: rajasthan },
+      { city: "Udaipur", tagline: "City of Lakes", duration: "3 Nights / 4 Days", from: 14999, highlights: ["Lake Pichola boat", "City Palace", "Sajjangarh", "Jagdish Temple"], hotels: "Lake-view hotels · breakfast + dinner · private transport", image: rajasthan },
+      { city: "Jaisalmer", tagline: "The Golden City", duration: "3 Nights / 4 Days", from: 15999, highlights: ["Sam Sand Dunes", "Camel safari", "Desert camp", "Jaisalmer Fort"], hotels: "Desert luxury camps · all meals · cultural night", image: rajasthan },
+      { city: "Mount Abu", tagline: "Rajasthan's only hill station", duration: "2 Nights / 3 Days", from: 10999, highlights: ["Nakki Lake", "Dilwara Temples", "Sunset Point", "Guru Shikhar"], hotels: "Hill-view resorts · breakfast + dinner · cab transfers", image: rajasthan },
+      { city: "Pushkar", tagline: "Sacred lake town", duration: "2 Nights / 3 Days", from: 8999, highlights: ["Brahma Temple", "Pushkar Lake", "Camel ride", "Local bazaars"], hotels: "Boutique heritage stays · breakfast · sightseeing", image: rajasthan },
+    ],
+  },
+  {
+    slug: "uttarakhand",
+    state: "Uttarakhand",
+    tagline: "Devbhoomi — sacred rivers & Himalayan retreats",
+    bestTime: "Mar – Jun · Sep – Nov",
+    banner: ladakh,
+    cities: [
+      { city: "Mussoorie", tagline: "Queen of the Hills", duration: "2 Nights / 3 Days", from: 9999, highlights: ["Kempty Falls", "Mall Road", "Gun Hill ropeway", "Lal Tibba"], hotels: "Hill-view 3★/4★ stays · breakfast · cab sightseeing", image: ladakh },
+      { city: "Nainital", tagline: "Lake district of India", duration: "3 Nights / 4 Days", from: 12999, highlights: ["Naini Lake boating", "Snow View Point", "Tiffin Top", "Mall Road"], hotels: "Lake-view hotels · breakfast + dinner · transfers", image: ladakh },
+      { city: "Rishikesh", tagline: "Yoga capital of the world", duration: "2 Nights / 3 Days", from: 8999, highlights: ["Ganga Aarti", "River rafting", "Lakshman Jhula", "Yoga sessions"], hotels: "Riverside camps / hotels · breakfast · activities", image: ladakh },
+      { city: "Haridwar", tagline: "Gateway to the gods", duration: "2 Nights / 3 Days", from: 7999, highlights: ["Har Ki Pauri", "Ganga Aarti", "Mansa Devi temple", "Chandi Devi"], hotels: "Ganga-view hotels · breakfast + dinner · cab", image: ladakh },
+      { city: "Auli", tagline: "Skiing paradise of India", duration: "3 Nights / 4 Days", from: 16999, highlights: ["Auli ropeway", "Skiing slopes", "Nanda Devi views", "Gurso Bugyal"], hotels: "Ski resorts · all meals · ropeway included", image: ladakh },
+    ],
+  },
+  {
+    slug: "ladakh",
+    state: "Ladakh",
+    tagline: "Land of high passes & turquoise lakes",
+    bestTime: "Jun – Sep",
+    banner: ladakh,
+    cities: [
+      { city: "Leh", tagline: "Cold desert capital", duration: "3 Nights / 4 Days", from: 18999, highlights: ["Leh Palace", "Shanti Stupa", "Local monasteries", "Acclimatization day"], hotels: "Premium Leh hotels · breakfast + dinner · oxygen support", image: ladakh },
+      { city: "Nubra Valley", tagline: "Valley of flowers & dunes", duration: "2 Nights / 3 Days", from: 12999, highlights: ["Khardung La Pass", "Hunder dunes", "Double-hump camel", "Diskit Monastery"], hotels: "Luxury camps / hotels · all meals · permits included", image: ladakh },
+      { city: "Pangong Lake", tagline: "Bluest lake in the Himalayas", duration: "1 Night / 2 Days", from: 8999, highlights: ["Lakeside camp", "Sunrise at Pangong", "Chang La Pass", "3 Idiots point"], hotels: "Premium lake camps · all meals · campfire", image: ladakh },
+      { city: "Magnetic Hill", tagline: "Gravity-defying wonder", duration: "Day Trip", from: 3999, highlights: ["Magnetic Hill", "Gurudwara Pathar Sahib", "Sangam point", "Hall of Fame"], hotels: "Day excursion from Leh · cab + guide", image: ladakh },
+    ],
+  },
+  {
+    slug: "jammu-kashmir",
+    state: "Jammu & Kashmir",
+    tagline: "Paradise on Earth — meadows, lakes & gondolas",
+    bestTime: "Mar – Oct (Spring/Summer) · Dec – Feb (Snow)",
+    banner: kashmir,
+    cities: [
+      { city: "Srinagar", tagline: "City of lakes & shikaras", duration: "3 Nights / 4 Days", from: 13999, highlights: ["Dal Lake shikara", "Mughal Gardens", "Shankaracharya Temple", "Houseboat stay"], hotels: "Deluxe houseboat + 4★ hotel · breakfast + dinner", image: kashmir },
+      { city: "Gulmarg", tagline: "Meadow of flowers & ski slopes", duration: "2 Nights / 3 Days", from: 12999, highlights: ["Gondola ride Phase 1 & 2", "Skiing in winter", "Apharwat Peak", "Golf course"], hotels: "Ski resorts / 4★ stays · breakfast + dinner", image: kashmir },
+      { city: "Sonmarg", tagline: "Meadow of gold", duration: "1 Night / 2 Days", from: 8999, highlights: ["Thajiwas Glacier", "Pony ride", "Zoji La views", "River walks"], hotels: "Riverside hotels · breakfast + dinner · cab", image: kashmir },
+      { city: "Pahalgam", tagline: "Valley of shepherds", duration: "2 Nights / 3 Days", from: 11999, highlights: ["Aru Valley", "Betaab Valley", "Chandanwari", "Lidder river"], hotels: "Valley-view 3★/4★ stays · breakfast + dinner · sightseeing", image: kashmir },
+    ],
+  },
+];

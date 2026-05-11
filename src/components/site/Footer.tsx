@@ -53,9 +53,19 @@ export function Footer() {
         <div>
           <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Reach Us</h4>
           <ul className="space-y-3 text-sm text-muted-foreground">
-            <li className="flex items-center gap-2"><Phone className="h-4 w-4" />{SITE.phone}</li>
-            <li className="flex items-center gap-2"><Mail className="h-4 w-4" />{SITE.email}</li>
-            <li className="flex items-center gap-2"><Instagram className="h-4 w-4" />@voyagoindia</li>
+            <li className="text-foreground/90"><span className="text-muted-foreground">Owner:</span> {SITE.owner}</li>
+            <li>
+              <a href={`tel:${SITE.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-primary">
+                <Phone className="h-4 w-4" />{SITE.phone}
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 hover:text-primary break-all">
+                <Mail className="h-4 w-4" />{SITE.email}
+              </a>
+            </li>
+            <li className="flex items-center gap-2"><Instagram className="h-4 w-4" />@anukatravels</li>
+            <li className="text-[11px] uppercase tracking-widest pt-2 border-t border-white/5">GST: {SITE.gst}</li>
           </ul>
         </div>
       </div>
