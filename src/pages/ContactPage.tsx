@@ -66,9 +66,35 @@ export default function ContactPage() {
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl glass-strong"><Mail className="h-5 w-5" /></span>
               <div>
                 <div className="text-sm text-muted-foreground">Email</div>
-                <div className="font-medium">{SITE.email}</div>
+                <div className="font-medium break-all">{SITE.email}</div>
               </div>
             </a>
+          </div>
+
+          <div className="mt-6 glass rounded-2xl p-5 text-sm">
+            <div className="text-xs uppercase tracking-[0.3em] text-primary mb-3">Business Details</div>
+            <dl className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <dt className="text-muted-foreground text-xs">Owner</dt>
+                <dd className="font-medium">{SITE.owner}</dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground text-xs">Brand</dt>
+                <dd className="font-medium">{SITE.name}</dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground text-xs">Mobile / WhatsApp</dt>
+                <dd className="font-medium"><a href={`tel:${SITE.phone.replace(/\s/g, '')}`} className="hover:text-primary">{SITE.phone}</a></dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground text-xs">Email</dt>
+                <dd className="font-medium break-all"><a href={`mailto:${SITE.email}`} className="hover:text-primary">{SITE.email}</a></dd>
+              </div>
+              <div className="sm:col-span-2">
+                <dt className="text-muted-foreground text-xs">GST Number</dt>
+                <dd className="font-medium">{SITE.gst}</dd>
+              </div>
+            </dl>
           </div>
         </div>
 
