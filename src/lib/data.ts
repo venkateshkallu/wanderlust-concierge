@@ -67,15 +67,15 @@ export type Pkg = {
 };
 
 export const packages: Pkg[] = [
-  { slug: "maldives-honeymoon", title: "Maldives Overwater Honeymoon", category: "Honeymoon", duration: "5 Days · 4 Nights", from: 89999, rating: 4.9, image: maldives, highlights: ["Water villa", "Candlelight dinner", "Couple spa"] },
-  { slug: "kerala-family", title: "Kerala Backwaters Family Escape", category: "Family", duration: "6 Days · 5 Nights", from: 21999, rating: 4.8, image: kerala, highlights: ["Houseboat", "Munnar tea estate", "Wildlife safari"] },
+  { slug: "manali-snow", title: "Manali Snow Escape", category: "Family", duration: "5 Days · 4 Nights", from: 16999, rating: 4.8, image: manali, highlights: ["Solang Valley", "Rohtang snow", "Old Manali"] },
+  { slug: "shimla-manali-honeymoon", title: "Shimla – Manali Honeymoon", category: "Honeymoon", duration: "6 Days · 5 Nights", from: 22999, rating: 4.9, image: manali, highlights: ["Mall Road", "Kufri", "Solang ropeway"] },
+  { slug: "rajasthan-royal", title: "Royal Rajasthan Heritage Trail", category: "Family", duration: "7 Days · 6 Nights", from: 24999, rating: 4.8, image: rajasthan, highlights: ["Jaipur palaces", "Udaipur lakes", "Jaisalmer dunes"] },
   { slug: "ladakh-bike", title: "Ladakh Himalayan Bike Adventure", category: "Adventure", duration: "8 Days · 7 Nights", from: 38999, rating: 4.9, image: ladakh, highlights: ["Khardung La", "Pangong camping", "Royal Enfield"] },
-  { slug: "bali-group", title: "Bali Group Getaway", category: "Group", duration: "7 Days · 6 Nights", from: 54999, rating: 4.8, image: bali, highlights: ["Private villa", "Volcano sunrise", "Beach club"] },
+  { slug: "kashmir-paradise", title: "Kashmir Paradise — Srinagar to Gulmarg", category: "Family", duration: "6 Days · 5 Nights", from: 24999, rating: 4.9, image: kashmir, highlights: ["Dal Lake shikara", "Gulmarg gondola", "Pahalgam meadows"] },
+  { slug: "uttarakhand-chardham", title: "Uttarakhand Hills & Rishikesh", category: "Group", duration: "6 Days · 5 Nights", from: 17999, rating: 4.7, image: ladakh, highlights: ["Nainital", "Mussoorie", "Rishikesh rafting"] },
+  { slug: "auli-ski", title: "Auli Skiing Special", category: "Adventure", duration: "5 Days · 4 Nights", from: 19999, rating: 4.8, image: ladakh, highlights: ["Auli ropeway", "Ski slopes", "Nanda Devi views"] },
   { slug: "switzerland-luxury", title: "Switzerland Alpine Express", category: "International", duration: "8 Days · 7 Nights", from: 149999, rating: 5.0, image: switzerland, highlights: ["Glacier Express", "Jungfraujoch", "Lake Lucerne"] },
-  { slug: "goa-weekend", title: "Goa Weekend Beach Break", category: "Weekend", duration: "3 Days · 2 Nights", from: 9999, rating: 4.7, image: goa, highlights: ["Beach resort", "Cruise dinner", "Water sports"] },
-  { slug: "dubai-family", title: "Dubai Family Fiesta", category: "Family", duration: "6 Days · 5 Nights", from: 49999, rating: 4.8, image: dubai, highlights: ["Burj Khalifa", "Desert safari", "Theme parks"] },
-  { slug: "andaman-honeymoon", title: "Andaman Island Romance", category: "Honeymoon", duration: "6 Days · 5 Nights", from: 32999, rating: 4.8, image: andaman, highlights: ["Havelock villa", "Scuba dive", "Sunset cruise"] },
-  { slug: "thailand-explorer", title: "Thailand Island Explorer", category: "International", duration: "7 Days · 6 Nights", from: 39999, rating: 4.7, image: thailand, highlights: ["Phi Phi", "Krabi", "Bangkok"] },
+  { slug: "dubai-family", title: "Dubai Family Fiesta", category: "International", duration: "6 Days · 5 Nights", from: 49999, rating: 4.8, image: dubai, highlights: ["Burj Khalifa", "Desert safari", "Theme parks"] },
 ];
 
 export const experiences = [
