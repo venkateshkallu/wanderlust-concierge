@@ -1,14 +1,15 @@
-import { MessageCircle, MapPin, Calendar, Star, Mountain, Palmtree, Cloud, Crown, Hotel, Clock, Phone } from 'lucide-react';
+import { MessageCircle, MapPin, Calendar, Star, Hotel, Clock, Phone, Mountain, Crown, Snowflake, Sparkles, Flower } from 'lucide-react';
 import { CTASection } from '@/components/site/CTASection';
-import { destinations, packages, REGIONS, indiaStates } from '@/lib/data';
+import { indiaStates } from '@/lib/data';
 import { SITE, waLink } from '@/lib/site';
 
-const REGION_META = [
-  { key: 'North' as const, slug: 'north', icon: Mountain, accent: 'Snow-clad Himalayas, valleys & mughal gardens.' },
-  { key: 'South' as const, slug: 'south', icon: Palmtree, accent: 'Backwaters, hill stations & sun-drenched beaches.' },
-  { key: 'East' as const, slug: 'east', icon: Cloud, accent: 'Tea hills, monasteries & untouched wilderness.' },
-  { key: 'West' as const, slug: 'west', icon: Crown, accent: 'Royal palaces, white deserts & coastal cities.' },
-];
+const STATE_ICONS: Record<string, typeof Mountain> = {
+  'himachal-pradesh': Mountain,
+  rajasthan: Crown,
+  uttarakhand: Flower,
+  ladakh: Sparkles,
+  'jammu-kashmir': Snowflake,
+};
 
 export default function ToursPage() {
   return (
@@ -22,32 +23,26 @@ export default function ToursPage() {
             Discover India, <span className="text-gradient-sunset italic">region by region</span>.
           </h1>
           <p className="mt-4 text-muted-foreground max-w-2xl">
-            From Himalayan snow to Kerala backwaters — explore curated itineraries across every corner of India.
+            Curated itineraries across Himachal, Rajasthan, Uttarakhand, Ladakh and Kashmir — with hotels, sightseeing & private transport included.
           </p>
 
-          {/* Region quick-jump */}
-          <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {REGION_META.map((r) => (
-              <a key={r.slug} href={`#${r.slug}`} className="glass rounded-2xl p-4 hover-lift transition group">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-sunset shadow-glow">
-                  <r.icon className="h-5 w-5 text-primary-foreground" />
-                </div>
-                <div className="mt-3 font-medium">{r.key} India</div>
-                <div className="mt-1 text-xs text-muted-foreground line-clamp-2">{r.accent}</div>
-              </a>
-            ))}
+          {/* State quick-jump */}
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+            {indiaStates.map((s) => {
+              const Icon = STATE_ICONS[s.slug] ?? Mountain;
+              return (
+                <a key={s.slug} href={`#${s.slug}`} className="glass rounded-2xl p-4 hover-lift transition group">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-sunset shadow-glow">
+                    <Icon className="h-5 w-5 text-primary-foreground" />
+                  </div>
+                  <div className="mt-3 font-medium">{s.state}</div>
+                  <div className="mt-1 text-xs text-muted-foreground line-clamp-2">{s.tagline}</div>
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>
-
-      {/* Region sections */}
-      {REGION_META.map((r) => {
-        const dests = destinations.filter((d) => d.zone === r.key);
-        const pkgs = packages.filter((p) =>
-          dests.some((d) => p.title.toLowerCase().includes(d.name.toLowerCase()))
-        );
-        return <RegionSection key={r.slug} region={r} dests={dests} pkgs={pkgs} />;
-      })}
 
       {/* State-wise India tours */}
       <section id="india-states" className="scroll-mt-24 py-16 sm:py-20 border-t border-white/5">
