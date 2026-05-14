@@ -58,20 +58,17 @@ export default function HomePage() {
               All India tours <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
-          <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {Object.values(REGIONS).map((r, i) => {
-              const sample = destinations.find((d) => d.zone === r.zone);
-              return (
-                <Link key={r.slug} to={`/tours#${r.slug}`} className="reveal group relative h-56 sm:h-72 overflow-hidden rounded-3xl block" style={{ transitionDelay: `${i * 70}ms` }}>
-                  <img src={sample?.image} alt={r.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
-                    <h3 className="font-display text-xl sm:text-2xl text-white">{r.title}</h3>
-                    <p className="mt-1 text-xs sm:text-sm text-white/75 line-clamp-2">{r.desc}</p>
-                  </div>
-                </Link>
-              );
-            })}
+          <div className="mt-10 grid grid-cols-2 lg:grid-cols-5 gap-4">
+            {Object.values(REGIONS).map((r, i) => (
+              <Link key={r.slug} to={`/tours#${r.slug}`} className="reveal group relative h-56 sm:h-72 overflow-hidden rounded-3xl block" style={{ transitionDelay: `${i * 70}ms` }}>
+                <img src={r.image} alt={r.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
+                  <h3 className="font-display text-xl sm:text-2xl text-white">{r.title}</h3>
+                  <p className="mt-1 text-xs sm:text-sm text-white/75 line-clamp-2">{r.desc}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
