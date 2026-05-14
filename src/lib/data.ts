@@ -31,28 +31,12 @@ export type Destination = {
 };
 
 export const destinations: Destination[] = [
-  // North
-  { slug: "kashmir", name: "Kashmir", region: "Domestic", zone: "North", tagline: "Paradise on Earth", image: kashmir, from: 24999, nights: "5N / 6D", highlights: ["Dal Lake shikara", "Gulmarg gondola", "Pahalgam meadows"], bestTime: "Mar – Oct" },
-  { slug: "manali", name: "Manali", region: "Domestic", zone: "North", tagline: "Snowfall & pine valleys", image: manali, from: 16999, nights: "4N / 5D", highlights: ["Solang adventure", "Rohtang snow", "Old Manali cafes"], bestTime: "Oct – Mar" },
-  { slug: "ladakh", name: "Ladakh", region: "Domestic", zone: "North", tagline: "Land of high passes", image: ladakh, from: 32999, nights: "6N / 7D", highlights: ["Pangong Lake", "Nubra dunes", "Magnetic Hill"], bestTime: "Jun – Sep" },
-  { slug: "shimla", name: "Shimla", region: "Domestic", zone: "North", tagline: "Queen of the hills", image: manali, from: 14999, nights: "4N / 5D", highlights: ["Mall Road", "Kufri snow", "Toy train"], bestTime: "Year-round" },
-
-  // South
-  { slug: "kerala", name: "Kerala", region: "Domestic", zone: "South", tagline: "God's own backwaters", image: kerala, from: 21999, nights: "5N / 6D", highlights: ["Alleppey houseboat", "Munnar tea hills", "Ayurveda spa"], bestTime: "Sep – Mar" },
-  { slug: "coorg", name: "Coorg", region: "Domestic", zone: "South", tagline: "Scotland of India", image: kerala, from: 13999, nights: "3N / 4D", highlights: ["Coffee plantations", "Abbey Falls", "Raja's Seat"], bestTime: "Oct – Mar" },
-  { slug: "ooty", name: "Ooty", region: "Domestic", zone: "South", tagline: "Nilgiri queen of hills", image: kerala, from: 12999, nights: "3N / 4D", highlights: ["Botanical garden", "Doddabetta peak", "Tea museum"], bestTime: "Oct – Jun" },
-  { slug: "goa", name: "Goa", region: "Domestic", zone: "South", tagline: "Sun, sand & sundowners", image: goa, from: 14999, nights: "3N / 4D", highlights: ["Beach resorts", "Cruise dinner", "Dudhsagar falls"], bestTime: "Nov – Feb" },
-
-  // East
-  { slug: "sikkim", name: "Sikkim", region: "Domestic", zone: "East", tagline: "Himalayan wilderness", image: ladakh, from: 19999, nights: "5N / 6D", highlights: ["Tsomgo Lake", "Nathula Pass", "Gangtok"], bestTime: "Mar – Jun" },
-  { slug: "darjeeling", name: "Darjeeling", region: "Domestic", zone: "East", tagline: "Tea hills & toy trains", image: manali, from: 15999, nights: "4N / 5D", highlights: ["Tiger Hill sunrise", "Toy train", "Tea estates"], bestTime: "Oct – Mar" },
-  { slug: "meghalaya", name: "Meghalaya", region: "Domestic", zone: "East", tagline: "Abode of the clouds", image: kerala, from: 22999, nights: "5N / 6D", highlights: ["Living root bridges", "Dawki river", "Cherrapunji"], bestTime: "Oct – Apr" },
-
-  // West
-  { slug: "rajasthan", name: "Rajasthan", region: "Domestic", zone: "West", tagline: "Royal heritage trail", image: rajasthan, from: 22999, nights: "6N / 7D", highlights: ["Jaipur palaces", "Udaipur lakes", "Jaisalmer dunes"], bestTime: "Oct – Mar" },
-  { slug: "gujarat", name: "Gujarat", region: "Domestic", zone: "West", tagline: "White Rann & lions", image: rajasthan, from: 18999, nights: "5N / 6D", highlights: ["Rann of Kutch", "Statue of Unity", "Gir lions"], bestTime: "Nov – Feb" },
-  { slug: "mumbai", name: "Mumbai", region: "Domestic", zone: "West", tagline: "City that never sleeps", image: goa, from: 11999, nights: "3N / 4D", highlights: ["Gateway of India", "Marine Drive", "Elephanta caves"], bestTime: "Nov – Feb" },
-  { slug: "andaman", name: "Andaman", region: "Domestic", tagline: "Turquoise island bliss", image: andaman, from: 28999, nights: "5N / 6D", highlights: ["Radhanagar beach", "Scuba diving", "Havelock Island"], bestTime: "Oct – May" },
+  // Domestic — focused India regions only
+  { slug: "himachal-pradesh", name: "Himachal Pradesh", region: "Domestic", zone: "North", tagline: "Snow valleys, pine forests & Himalayan towns", image: manali, from: 11999, nights: "Shimla · Manali · Kasol · Dharamshala", highlights: ["Solang & Rohtang snow", "Mall Road Shimla", "Kasol river cafés", "McLeodganj"], bestTime: "Oct – Mar (Snow) · Apr – Jun" },
+  { slug: "rajasthan", name: "Rajasthan", region: "Domestic", zone: "West", tagline: "Royal palaces, golden dunes & living forts", image: rajasthan, from: 9999, nights: "Jaipur · Udaipur · Jaisalmer · Pushkar", highlights: ["Amber Fort", "Lake Pichola", "Sam Sand Dunes", "Pushkar Lake"], bestTime: "Oct – Mar" },
+  { slug: "uttarakhand", name: "Uttarakhand", region: "Domestic", zone: "North", tagline: "Devbhoomi — sacred rivers & Himalayan retreats", image: ladakh, from: 7999, nights: "Mussoorie · Nainital · Rishikesh · Auli", highlights: ["Naini Lake", "Ganga Aarti", "River rafting", "Auli skiing"], bestTime: "Mar – Jun · Sep – Nov" },
+  { slug: "ladakh", name: "Ladakh", region: "Domestic", zone: "North", tagline: "Land of high passes & turquoise lakes", image: ladakh, from: 18999, nights: "Leh · Nubra · Pangong · Magnetic Hill", highlights: ["Pangong Lake", "Khardung La", "Nubra dunes", "Leh monasteries"], bestTime: "Jun – Sep" },
+  { slug: "jammu-kashmir", name: "Jammu & Kashmir", region: "Domestic", zone: "North", tagline: "Paradise on Earth — meadows, lakes & gondolas", image: kashmir, from: 13999, nights: "Srinagar · Gulmarg · Sonmarg · Pahalgam", highlights: ["Dal Lake shikara", "Gulmarg gondola", "Betaab Valley", "Thajiwas glacier"], bestTime: "Mar – Oct · Dec – Feb (Snow)" },
 
   // International
   { slug: "dubai", name: "Dubai", region: "International", tagline: "Skylines & desert luxury", image: dubai, from: 49999, nights: "5N / 6D", highlights: ["Burj Khalifa", "Desert safari", "Dhow cruise"] },
@@ -64,10 +48,11 @@ export const destinations: Destination[] = [
 ];
 
 export const REGIONS = {
-  north: { slug: "north", title: "North India", desc: "Snow-clad Himalayas, mughal gardens, and spiritual valleys.", zone: "North" as const },
-  south: { slug: "south", title: "South India", desc: "Backwaters, hill stations, and sun-drenched beaches.", zone: "South" as const },
-  east: { slug: "east", title: "East India", desc: "Tea hills, monasteries, and untouched wilderness.", zone: "East" as const },
-  west: { slug: "west", title: "West India", desc: "Royal palaces, white deserts, and coastal cities.", zone: "West" as const },
+  "himachal-pradesh": { slug: "himachal-pradesh", title: "Himachal Pradesh", desc: "Shimla, Manali, Kasol & Dharamshala — snow valleys & pine forests.", image: manali },
+  rajasthan: { slug: "rajasthan", title: "Rajasthan", desc: "Jaipur, Udaipur, Jaisalmer, Mount Abu & Pushkar — royal heritage trail.", image: rajasthan },
+  uttarakhand: { slug: "uttarakhand", title: "Uttarakhand", desc: "Mussoorie, Nainital, Rishikesh, Haridwar & Auli — Devbhoomi escapes.", image: ladakh },
+  ladakh: { slug: "ladakh", title: "Ladakh", desc: "Leh, Nubra Valley, Pangong Lake & Magnetic Hill — high-altitude wonderland.", image: ladakh },
+  "jammu-kashmir": { slug: "jammu-kashmir", title: "Jammu & Kashmir", desc: "Srinagar, Gulmarg, Sonmarg & Pahalgam — paradise on earth.", image: kashmir },
 };
 
 export type Pkg = {
