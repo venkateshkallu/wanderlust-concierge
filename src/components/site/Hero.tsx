@@ -149,7 +149,7 @@ export function Hero() {
                   key={c}
                   onClick={() => setType(c)}
                   className={`rounded-full border px-3 py-1 text-xs transition ${
-                    type === c ? "bg-white text-foreground border-white" : "border-white/10 bg-white/5 text-white/70 hover:bg-white/10"
+                    type === c ? "bg-white text-background border-white" : "border-white/10 bg-white/5 text-white/70 hover:bg-white/10"
                   }`}
                 >
                   {c}
